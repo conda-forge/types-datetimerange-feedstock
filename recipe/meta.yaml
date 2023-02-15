@@ -1,5 +1,5 @@
 {% set name = "types-DateTimeRange" %}
-{% set version = "2.0.0.0" %}
+{% set version = "2.0.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-DateTimeRange-{{ version }}.tar.gz
-  sha256: 104d9e479459cd9765e3eb078bbd08300b6982dfaa5588962c6133c7ebf57855
+  sha256: f0d1e5b02dc19d73751ab0bb069014eeef9e2cc06ef740efdb87474cdd4759fd
 
 build:
   number: 0
