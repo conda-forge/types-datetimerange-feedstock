@@ -7,23 +7,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-DateTimeRange-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/types-DateTimeRange-{{ version }}.tar.gz
   sha256: a173c317691f0c98f4d86a8e2c9691550994be9c598ed7d8b8a6c6057a7e754c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - types-python-dateutil
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f $SP_DIR/datetimerange-stubs/__init__.pyi
 
